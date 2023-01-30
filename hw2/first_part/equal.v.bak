@@ -1,0 +1,4 @@
+module equal(a, b, out);
+input [31:0] a;
+input [31:0] b;
+output out;

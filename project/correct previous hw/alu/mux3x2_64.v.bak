@@ -1,0 +1,8 @@
+module mux3x2_64 (a, b, c, s0, s1, out);
+input [63:0] a;
+input [63:0] b;
+input [63:0] c;
+input s0;
+input s1;
+output [63:0] out;
+endmodule

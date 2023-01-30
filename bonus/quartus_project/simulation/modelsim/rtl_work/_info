@@ -1,0 +1,98 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/bonus/simulation/modelsim
+vbonus
+Z1 !s110 1673042982
+!i10b 1
+!s100 ?S45emmmkQj>E8<9Zi<=X1
+I?Vm?47457NQIfI[e:eF]01
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1673038026
+8/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/bonus/bonus.v
+F/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/bonus/bonus.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1673042981.000000
+!s107 /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/bonus/bonus.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/bonus|/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/bonus/bonus.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work {+incdir+/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/bonus}
+Z7 tCvgOpt 0
+vcontroller
+R1
+!i10b 1
+!s100 =1e<2iz`POfH<a8:7Y7[12
+Ii@n6dS;`3SA[0V6lNZJFQ1
+R2
+R0
+w1673042770
+8/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/bonus/controller.v
+F/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/bonus/controller.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z8 !s108 1673042982.000000
+!s107 /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/bonus/controller.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/bonus|/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/bonus/controller.v|
+!i113 1
+R5
+R6
+R7
+vdatapath
+R1
+!i10b 1
+!s100 9`FE411W?]E<7fn4>>B`92
+Ica8bEK_R[`=n[[5U86ZdO3
+R2
+R0
+w1673042273
+8/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/bonus/datapath.v
+F/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/bonus/datapath.v
+L0 1
+R3
+r1
+!s85 0
+31
+R8
+!s107 /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/bonus/datapath.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/bonus|/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/bonus/datapath.v|
+!i113 1
+R5
+R6
+R7
+vtest
+!s110 1673042981
+!i10b 1
+!s100 kH1AO8e`e_XNX_=0_lo800
+I<i::f??1kO;2ZTS`Kobj>2
+R2
+R0
+w1673041085
+8/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/bonus/test.v
+F/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/bonus/test.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/bonus/test.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/bonus|/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/bonus/test.v|
+!i113 1
+R5
+R6
+R7

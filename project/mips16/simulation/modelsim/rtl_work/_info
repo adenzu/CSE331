@@ -1,0 +1,208 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/simulation/modelsim
+valu
+Z1 !s110 1674027704
+!i10b 1
+!s100 49W4gh0Z;R9A8?0aM1gBF2
+IWTk2c:l;inRnDnN0;_24T1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1673804065
+8/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/alu.v
+F/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/alu.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1674027704.000000
+!s107 /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/alu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16|/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/alu.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work {+incdir+/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16}
+Z7 tCvgOpt 0
+valu_control
+R1
+!i10b 1
+!s100 Zc2?c0PPRNcdU@0B:e0^b0
+I`<LhI7g`0MMBMTinGkLkY2
+R2
+R0
+w1673804320
+8/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/alu_control.v
+F/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/alu_control.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/alu_control.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16|/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/alu_control.v|
+!i113 1
+R5
+R6
+R7
+vcontrol
+R1
+!i10b 1
+!s100 LODZkXmKJddQoSUzTi4j_3
+IB?[=DaaRCG589h[iikCid3
+R2
+R0
+w1673952239
+8/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/control.v
+F/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/control.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/control.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16|/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/control.v|
+!i113 1
+R5
+R6
+R7
+vdata_memory
+R1
+!i10b 1
+!s100 z_HeaC_HlTiO9?J60Ek743
+IFZ<`2GjnUnKJ;Iiel2JkQ0
+R2
+R0
+w1673803511
+8/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/data_memory.v
+F/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/data_memory.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/data_memory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16|/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/data_memory.v|
+!i113 1
+R5
+R6
+R7
+vinstruction_memory
+R1
+!i10b 1
+!s100 LUVN_5km=oKj8jd=YljIS0
+Iof3gWKT_ghT6egQ9_j4E60
+R2
+R0
+w1673804285
+8/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/instruction_memory.v
+F/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/instruction_memory.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/instruction_memory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16|/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/instruction_memory.v|
+!i113 1
+R5
+R6
+R7
+vJR_Control
+R1
+!i10b 1
+!s100 OO=1:QO?BLgJP<PiIibIg0
+IUf2Zh_=@Z26b5IC?lN^D20
+R2
+R0
+w1673803366
+8/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/JR_Control.v
+F/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/JR_Control.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/JR_Control.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16|/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/JR_Control.v|
+!i113 1
+R5
+R6
+R7
+n@j@r_@control
+vmips
+R1
+!i10b 1
+!s100 <BR]8ab[:mSe]N`ZJJ<L_3
+IL14i=gF7A6UijVaU71_IP0
+R2
+R0
+w1673957108
+8/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/mips.v
+F/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/mips.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/mips.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16|/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/mips.v|
+!i113 1
+R5
+R6
+R7
+vregister_file
+R1
+!i10b 1
+!s100 3n1n0Rk?Xa<BT5P5BkD420
+I35BX1[7U`IGXj^37Y>>[[2
+R2
+R0
+w1673803501
+8/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/register_file.v
+F/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/register_file.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/register_file.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16|/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/register_file.v|
+!i113 1
+R5
+R6
+R7
+vtestbench
+!s110 1674028861
+!i10b 1
+!s100 Z9L4@oO]cInFP5ecmLGa_2
+IB245=hYA=8LN_m2nL_MSe2
+R2
+R0
+w1674028850
+8/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/testbench.v
+F/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/testbench.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1674028861.000000
+!s107 /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/testbench.v|
+!s90 -reportprogress|300|-work|work|/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/project/mips16/testbench.v|
+!i113 1
+o-work work
+R7

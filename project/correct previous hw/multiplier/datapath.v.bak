@@ -1,0 +1,46 @@
+module datapath(
+	input clock,
+	input select_initial,
+	input select_add,
+	input select_counter_increment,
+	input multiplier,
+	input multiplicand,
+	output finished,
+	output product0,
+);
+
+reg [63:0] sum;
+reg [63:0] shifted;
+reg [63:0] product;
+reg [5:0] counter;
+
+wire [63:0] product_shifted;
+wire [63:0] product_initial;
+wire [63:0] product_incremented;
+wire [63:0] mux_add;
+wire [63:0] mux_initial;
+wire [5:0] counter_incremented;
+
+assign finished = counter < 6'd32;
+assign product0 = product[0];
+assign counter_incremented = counter + 6'd1;
+assign product_shifted = product >> 1;
+assign product_incremented = {product[63:32] + multiplicand, product[31:0]};
+assign product_initial = {32'd0, multiplier};
+
+assign mux_add
+
+
+initial
+	begin
+	counter <= 6'd0;
+	end
+
+always@(posedge clock)
+	begin
+		if(select_initial)
+			product <= {32'd0, multiplier};
+		if(select_write)
+	end
+
+endmodule

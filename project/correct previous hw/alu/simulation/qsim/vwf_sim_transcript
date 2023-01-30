@@ -1,0 +1,70 @@
+Determining the location of the ModelSim executable...
+
+Using: /home/eren/intelFPGA/16.1/modelsim_ase/bin
+
+To specify a ModelSim executable directory, select: Tools -> Options -> EDA Tool Options
+Note: if both Questa Intel FPGA Edition and ModelSim executables are available, Questa Intel FPGA Edition will be used.
+
+**** Generating the ModelSim Testbench ****
+
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off alu32 -c alu32 --vector_source="/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw3/correct previous hw/alu/Waveform.vwf" --testbench_file="/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw3/correct previous hw/alu/simulation/qsim/Waveform.vwf.vt"
+
+Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition    Info: Copyright (C) 2022  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and any partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details, at    Info: https://fpgasoftware.intel.com/eula.    Info: Processing started: Fri Dec 30 18:27:31 2022Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off alu32 -c alu32 --vector_source="/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw3/correct previous hw/alu/Waveform.vwf" --testbench_file="/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw3/correct previous hw/alu/simulation/qsim/Waveform.vwf.vt"Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+5): Ignoring output pin "result[10]" in vector source file when writing test bench files
+Completed successfully. 
+
+Completed successfully. 
+
+**** Generating the timing simulation netlist ****
+
+quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw3/correct previous hw/alu/simulation/qsim/" alu32 -c alu32
+
+Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition    Info: Copyright (C) 2022  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and any partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details, at    Info: https://fpgasoftware.intel.com/eula.    Info: Processing started: Fri Dec 30 18:27:34 2022Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw3/correct previous hw/alu/simulation/qsim/" alu32 -c alu32Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.Warning (10905): Generated the EDA functional simulation netlist because it is the only supported netlist type for this device.Info (204019): Generated file alu32.vo in folder "/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw3/correct previous hw/alu/simulation/qsim//" for EDA simulation toolInfo: Quartus Prime EDA Netlist Writer was successful. 0 errors, 2 warnings    Info: Peak virtual memory: 719 megabytes    Info: Processing ended: Fri Dec 30 18:27:35 2022    Info: Elapsed time: 00:00:01    Info: Total CPU time (on all processors): 00:00:01
+Completed successfully. 
+
+**** Generating the ModelSim .do script ****
+
+/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw3/correct previous hw/alu/simulation/qsim/alu32.do generated.
+
+Completed successfully. 
+
+**** Running the ModelSim simulation ****
+
+/home/eren/intelFPGA/16.1/modelsim_ase/bin/vsim -c -do alu32.do
+
+Reading pref.tcl
+# 10.5b
+# do alu32.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:27:36 on Dec 30,2022# vlog -work work alu32.vo 
+# -- Compiling module alu32
+# 
+# Top level modules:# 	alu32# End time: 18:27:36 on Dec 30,2022, Elapsed time: 0:00:00# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:27:36 on Dec 30,2022# vlog -work work Waveform.vwf.vt 
+# -- Compiling module alu32_vlg_vec_tst
+# 
+# Top level modules:# 	alu32_vlg_vec_tst# End time: 18:27:36 on Dec 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.alu32_vlg_vec_tst # Start time: 18:27:36 on Dec 30,2022# Loading work.alu32_vlg_vec_tst# Loading work.alu32# Loading altera_ver.dffeas# Loading altera_ver.PRIM_GDFF_LOW
+# after#25
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.# ** Note: $finish    : Waveform.vwf.vt(53)#    Time: 1 us  Iteration: 0  Instance: /alu32_vlg_vec_tst
+# End time: 18:27:37 on Dec 30,2022, Elapsed time: 0:00:01# Errors: 0, Warnings: 7
+Completed successfully. 
+
+**** Converting ModelSim VCD to vector waveform ****
+
+Reading /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw3/correct previous hw/alu/Waveform.vwf...
+
+Reading /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw3/correct previous hw/alu/simulation/qsim/alu32.msim.vcd...
+
+Processing channel transitions... 
+
+Writing the resulting VWF to /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw3/correct previous hw/alu/simulation/qsim/alu32_20221230182737.sim.vwf
+
+Finished VCD to VWF conversion.
+
+Completed successfully. 
+
+All completed.

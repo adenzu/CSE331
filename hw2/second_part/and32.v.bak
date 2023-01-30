@@ -1,0 +1,3 @@
+module and32 (a, b, out);
+
+endmodule

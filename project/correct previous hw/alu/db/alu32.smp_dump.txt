@@ -1,0 +1,7 @@
+
+State Machine - |alu32|mult32:mult0|control:c0|current_state
+Name current_state.SHIFT current_state.ADD current_state.CHECK current_state.START 
+current_state.START 0 0 0 0 
+current_state.CHECK 0 0 1 1 
+current_state.ADD 0 1 0 1 
+current_state.SHIFT 1 0 0 1 

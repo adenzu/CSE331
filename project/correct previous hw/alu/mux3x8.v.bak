@@ -1,0 +1,8 @@
+module mux3x8(in, selector, out);
+input [31:0] in [0:7];
+input [2:0] selector;
+output out;
+
+localparam one = 32'hffffffff;
+
+endmodule

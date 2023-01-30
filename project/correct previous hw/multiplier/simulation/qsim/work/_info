@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw3/correct previous hw/multiplier/simulation/qsim
+vmult
+Z1 !s110 1672411894
+!i10b 1
+!s100 B^YRT<9MCfjWXlob<BVVE2
+I1ZU`?QAYm=LZ`NIGRg3YZ0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1672411893
+8mult.vo
+Fmult.vo
+L0 32
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1672411894.000000
+!s107 mult.vo|
+!s90 -work|work|mult.vo|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vmult_vlg_vec_tst
+R1
+!i10b 1
+!s100 =emTDD6iBfBN^4Ea2U_=V0
+ITUGdHIbedniDoZONU<4o]1
+R2
+R0
+w1672411892
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 30
+R3
+r1
+!s85 0
+31
+R4
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R5
+R6

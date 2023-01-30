@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/simulation/qsim
+valu32
+Z0 !s110 1672414056
+!i10b 1
+!s100 :7:2RKLIgLTaN[bm;LiIJ1
+IaNhbg``?=5VGe0X;2B;]b2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 d/home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw3/correct previous hw/alu/simulation/qsim
+w1672414055
+8alu32.vo
+Falu32.vo
+L0 32
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1672414056.000000
+!s107 alu32.vo|
+!s90 -work|work|alu32.vo|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+valu32_vlg_vec_tst
+R0
+!i10b 1
+!s100 GS81Tb>0=zG`SC`ioY9nJ2
+I4iH79VhASSlJRePb7?XYQ1
+R1
+R2
+w1672414052
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 30
+R3
+r1
+!s85 0
+31
+R4
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R5
+R6

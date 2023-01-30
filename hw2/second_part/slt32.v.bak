@@ -1,0 +1,4 @@
+module slt32 (a, b, out);
+
+
+endmodule

@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at control.v(23): always construct contains both blocking and non-blocking assignments File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/first_part/control.v Line: 23

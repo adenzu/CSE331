@@ -1,0 +1,877 @@
+Analysis & Synthesis report for alu32
+Thu Dec  8 22:34:06 2022
+Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |alu32|mult32:mult0|control:control0|currentState
+  9. Logic Cells Representing Combinational Loops
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Port Connectivity Checks: "slt32:slt0|sub32:sub_1"
+ 14. Port Connectivity Checks: "mult32:mult0|datapath:datapath0|adder:add0|full_adder:fa5000"
+ 15. Port Connectivity Checks: "mult32:mult0|datapath:datapath0|adder:add0|full_adder:fa1"
+ 16. Port Connectivity Checks: "mult32:mult0|datapath:datapath0|adder:add0"
+ 17. Port Connectivity Checks: "mult32:mult0|datapath:datapath0|mux2x1_32:mm01"
+ 18. Port Connectivity Checks: "mult32:mult0|datapath:datapath0|mux3x2_64:mm0"
+ 19. Port Connectivity Checks: "mult32:mult0|datapath:datapath0"
+ 20. Port Connectivity Checks: "mult32:mult0|control:control0"
+ 21. Port Connectivity Checks: "mult32:mult0|or32:or0"
+ 22. Port Connectivity Checks: "sub32:sub0|add32:add_1"
+ 23. Port Connectivity Checks: "sub32:sub0|add32:add_10"
+ 24. Port Connectivity Checks: "sub32:sub0"
+ 25. Port Connectivity Checks: "add32:add0|full_adder:fa5000"
+ 26. Port Connectivity Checks: "add32:add0|full_adder:fa1"
+ 27. Port Connectivity Checks: "add32:add0"
+ 28. Post-Synthesis Netlist Statistics for Top Partition
+ 29. Elapsed Time Per Partition
+ 30. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++---------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Thu Dec  8 22:34:06 2022          ;
+; Quartus Prime Version           ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
+; Revision Name                   ; alu32                                          ;
+; Top-level Entity Name           ; alu32                                          ;
+; Family                          ; Cyclone V                                      ;
+; Logic utilization (in ALMs)     ; N/A                                            ;
+; Total registers                 ; 13                                             ;
+; Total pins                      ; 101                                            ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 0                                              ;
+; Total DSP Blocks                ; 0                                              ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0                                              ;
+; Total DLLs                      ; 0                                              ;
++---------------------------------+------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Top-level entity name                                                           ; alu32              ; alu32              ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                               ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                 ; Library ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------------------+---------+
+; mux3x2_64.v                      ; yes             ; User Verilog HDL File  ; /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/mux3x2_64.v  ;         ;
+; mux2x1_32.v                      ; yes             ; User Verilog HDL File  ; /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/mux2x1_32.v  ;         ;
+; mux2x1.v                         ; yes             ; User Verilog HDL File  ; /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/mux2x1.v     ;         ;
+; mult32.v                         ; yes             ; User Verilog HDL File  ; /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/mult32.v     ;         ;
+; datapath.v                       ; yes             ; User Verilog HDL File  ; /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/datapath.v   ;         ;
+; control.v                        ; yes             ; User Verilog HDL File  ; /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/control.v    ;         ;
+; adder.v                          ; yes             ; User Verilog HDL File  ; /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/adder.v      ;         ;
+; mux3x8.v                         ; yes             ; User Verilog HDL File  ; /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/mux3x8.v     ;         ;
+; alu32.v                          ; yes             ; User Verilog HDL File  ; /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/alu32.v      ;         ;
+; add32.v                          ; yes             ; User Verilog HDL File  ; /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/add32.v      ;         ;
+; full_adder.v                     ; yes             ; User Verilog HDL File  ; /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/full_adder.v ;         ;
+; sub32.v                          ; yes             ; User Verilog HDL File  ; /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v      ;         ;
+; xor32.v                          ; yes             ; User Verilog HDL File  ; /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/xor32.v      ;         ;
+; and32.v                          ; yes             ; User Verilog HDL File  ; /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/and32.v      ;         ;
+; or32.v                           ; yes             ; User Verilog HDL File  ; /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/or32.v       ;         ;
+; nor32.v                          ; yes             ; User Verilog HDL File  ; /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/nor32.v      ;         ;
+; slt32.v                          ; yes             ; User Verilog HDL File  ; /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/slt32.v      ;         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 159            ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 231            ;
+;     -- 7 input functions                    ; 25             ;
+;     -- 6 input functions                    ; 62             ;
+;     -- 5 input functions                    ; 42             ;
+;     -- 4 input functions                    ; 20             ;
+;     -- <=3 input functions                  ; 82             ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 13             ;
+;                                             ;                ;
+; I/O pins                                    ; 101            ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; aluop[0]~input ;
+; Maximum fan-out                             ; 61             ;
+; Total fan-out                               ; 1212           ;
+; Average fan-out                             ; 2.72           ;
++---------------------------------------------+----------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                   ;
++------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------+-------------+--------------+
+; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                              ; Entity Name ; Library Name ;
++------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------+-------------+--------------+
+; |alu32                       ; 231 (0)             ; 13 (0)                    ; 0                 ; 0          ; 101  ; 0            ; |alu32                                                           ; alu32       ; work         ;
+;    |add32:add0|              ; 43 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|add32:add0                                                ; add32       ; work         ;
+;       |full_adder:fa1000|    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|add32:add0|full_adder:fa1000                              ; full_adder  ; work         ;
+;       |full_adder:fa100|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|add32:add0|full_adder:fa100                               ; full_adder  ; work         ;
+;       |full_adder:fa10|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|add32:add0|full_adder:fa10                                ; full_adder  ; work         ;
+;       |full_adder:fa200|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|add32:add0|full_adder:fa200                               ; full_adder  ; work         ;
+;       |full_adder:fa20|      ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|add32:add0|full_adder:fa20                                ; full_adder  ; work         ;
+;       |full_adder:fa2|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|add32:add0|full_adder:fa2                                 ; full_adder  ; work         ;
+;       |full_adder:fa3000|    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|add32:add0|full_adder:fa3000                              ; full_adder  ; work         ;
+;       |full_adder:fa300|     ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|add32:add0|full_adder:fa300                               ; full_adder  ; work         ;
+;       |full_adder:fa30|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|add32:add0|full_adder:fa30                                ; full_adder  ; work         ;
+;       |full_adder:fa3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|add32:add0|full_adder:fa3                                 ; full_adder  ; work         ;
+;       |full_adder:fa400|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|add32:add0|full_adder:fa400                               ; full_adder  ; work         ;
+;       |full_adder:fa40|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|add32:add0|full_adder:fa40                                ; full_adder  ; work         ;
+;       |full_adder:fa4|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|add32:add0|full_adder:fa4                                 ; full_adder  ; work         ;
+;       |full_adder:fa500|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|add32:add0|full_adder:fa500                               ; full_adder  ; work         ;
+;       |full_adder:fa50|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|add32:add0|full_adder:fa50                                ; full_adder  ; work         ;
+;       |full_adder:fa5|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|add32:add0|full_adder:fa5                                 ; full_adder  ; work         ;
+;       |full_adder:fa600|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|add32:add0|full_adder:fa600                               ; full_adder  ; work         ;
+;       |full_adder:fa60|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|add32:add0|full_adder:fa60                                ; full_adder  ; work         ;
+;       |full_adder:fa6|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|add32:add0|full_adder:fa6                                 ; full_adder  ; work         ;
+;       |full_adder:fa700|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|add32:add0|full_adder:fa700                               ; full_adder  ; work         ;
+;       |full_adder:fa70|      ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|add32:add0|full_adder:fa70                                ; full_adder  ; work         ;
+;       |full_adder:fa7|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|add32:add0|full_adder:fa7                                 ; full_adder  ; work         ;
+;       |full_adder:fa800|     ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|add32:add0|full_adder:fa800                               ; full_adder  ; work         ;
+;       |full_adder:fa80|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|add32:add0|full_adder:fa80                                ; full_adder  ; work         ;
+;       |full_adder:fa8|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|add32:add0|full_adder:fa8                                 ; full_adder  ; work         ;
+;       |full_adder:fa900|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|add32:add0|full_adder:fa900                               ; full_adder  ; work         ;
+;       |full_adder:fa90|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|add32:add0|full_adder:fa90                                ; full_adder  ; work         ;
+;       |full_adder:fa9|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|add32:add0|full_adder:fa9                                 ; full_adder  ; work         ;
+;    |mult32:mult0|            ; 46 (0)              ; 13 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0                                              ; mult32      ; work         ;
+;       |control:control0|     ; 14 (14)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|control:control0                             ; control     ; work         ;
+;       |datapath:datapath0|   ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0                           ; datapath    ; work         ;
+;          |mux2x1_32:mm00|    ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00            ; mux2x1_32   ; work         ;
+;             |mux2x1:m0|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m0  ; mux2x1      ; work         ;
+;             |mux2x1:m10|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m10 ; mux2x1      ; work         ;
+;             |mux2x1:m11|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m11 ; mux2x1      ; work         ;
+;             |mux2x1:m12|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m12 ; mux2x1      ; work         ;
+;             |mux2x1:m13|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m13 ; mux2x1      ; work         ;
+;             |mux2x1:m14|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m14 ; mux2x1      ; work         ;
+;             |mux2x1:m15|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m15 ; mux2x1      ; work         ;
+;             |mux2x1:m16|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m16 ; mux2x1      ; work         ;
+;             |mux2x1:m17|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m17 ; mux2x1      ; work         ;
+;             |mux2x1:m18|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m18 ; mux2x1      ; work         ;
+;             |mux2x1:m19|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m19 ; mux2x1      ; work         ;
+;             |mux2x1:m1|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m1  ; mux2x1      ; work         ;
+;             |mux2x1:m20|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m20 ; mux2x1      ; work         ;
+;             |mux2x1:m21|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m21 ; mux2x1      ; work         ;
+;             |mux2x1:m22|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m22 ; mux2x1      ; work         ;
+;             |mux2x1:m23|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m23 ; mux2x1      ; work         ;
+;             |mux2x1:m24|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m24 ; mux2x1      ; work         ;
+;             |mux2x1:m25|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m25 ; mux2x1      ; work         ;
+;             |mux2x1:m26|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m26 ; mux2x1      ; work         ;
+;             |mux2x1:m27|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m27 ; mux2x1      ; work         ;
+;             |mux2x1:m28|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m28 ; mux2x1      ; work         ;
+;             |mux2x1:m29|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m29 ; mux2x1      ; work         ;
+;             |mux2x1:m2|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m2  ; mux2x1      ; work         ;
+;             |mux2x1:m30|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m30 ; mux2x1      ; work         ;
+;             |mux2x1:m31|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m31 ; mux2x1      ; work         ;
+;             |mux2x1:m3|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m3  ; mux2x1      ; work         ;
+;             |mux2x1:m4|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m4  ; mux2x1      ; work         ;
+;             |mux2x1:m5|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m5  ; mux2x1      ; work         ;
+;             |mux2x1:m6|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m6  ; mux2x1      ; work         ;
+;             |mux2x1:m7|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m7  ; mux2x1      ; work         ;
+;             |mux2x1:m8|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m8  ; mux2x1      ; work         ;
+;             |mux2x1:m9|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m9  ; mux2x1      ; work         ;
+;    |mux3x8:mux_0|            ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_0                                              ; mux3x8      ; work         ;
+;    |mux3x8:mux_10|           ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_10                                             ; mux3x8      ; work         ;
+;    |mux3x8:mux_11|           ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_11                                             ; mux3x8      ; work         ;
+;    |mux3x8:mux_12|           ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_12                                             ; mux3x8      ; work         ;
+;    |mux3x8:mux_13|           ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_13                                             ; mux3x8      ; work         ;
+;    |mux3x8:mux_14|           ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_14                                             ; mux3x8      ; work         ;
+;    |mux3x8:mux_15|           ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_15                                             ; mux3x8      ; work         ;
+;    |mux3x8:mux_16|           ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_16                                             ; mux3x8      ; work         ;
+;    |mux3x8:mux_17|           ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_17                                             ; mux3x8      ; work         ;
+;    |mux3x8:mux_18|           ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_18                                             ; mux3x8      ; work         ;
+;    |mux3x8:mux_19|           ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_19                                             ; mux3x8      ; work         ;
+;    |mux3x8:mux_1|            ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_1                                              ; mux3x8      ; work         ;
+;    |mux3x8:mux_20|           ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_20                                             ; mux3x8      ; work         ;
+;    |mux3x8:mux_21|           ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_21                                             ; mux3x8      ; work         ;
+;    |mux3x8:mux_22|           ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_22                                             ; mux3x8      ; work         ;
+;    |mux3x8:mux_23|           ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_23                                             ; mux3x8      ; work         ;
+;    |mux3x8:mux_24|           ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_24                                             ; mux3x8      ; work         ;
+;    |mux3x8:mux_25|           ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_25                                             ; mux3x8      ; work         ;
+;    |mux3x8:mux_26|           ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_26                                             ; mux3x8      ; work         ;
+;    |mux3x8:mux_27|           ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_27                                             ; mux3x8      ; work         ;
+;    |mux3x8:mux_28|           ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_28                                             ; mux3x8      ; work         ;
+;    |mux3x8:mux_29|           ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_29                                             ; mux3x8      ; work         ;
+;    |mux3x8:mux_2|            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_2                                              ; mux3x8      ; work         ;
+;    |mux3x8:mux_30|           ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_30                                             ; mux3x8      ; work         ;
+;    |mux3x8:mux_31|           ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_31                                             ; mux3x8      ; work         ;
+;    |mux3x8:mux_3|            ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_3                                              ; mux3x8      ; work         ;
+;    |mux3x8:mux_4|            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_4                                              ; mux3x8      ; work         ;
+;    |mux3x8:mux_5|            ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_5                                              ; mux3x8      ; work         ;
+;    |mux3x8:mux_6|            ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_6                                              ; mux3x8      ; work         ;
+;    |mux3x8:mux_7|            ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_7                                              ; mux3x8      ; work         ;
+;    |mux3x8:mux_8|            ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_8                                              ; mux3x8      ; work         ;
+;    |mux3x8:mux_9|            ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|mux3x8:mux_9                                              ; mux3x8      ; work         ;
+;    |sub32:sub0|              ; 64 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0                                                ; sub32       ; work         ;
+;       |add32:add_10|         ; 31 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_10                                   ; add32       ; work         ;
+;          |full_adder:fa1000| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_10|full_adder:fa1000                 ; full_adder  ; work         ;
+;          |full_adder:fa100|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_10|full_adder:fa100                  ; full_adder  ; work         ;
+;          |full_adder:fa10|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_10|full_adder:fa10                   ; full_adder  ; work         ;
+;          |full_adder:fa200|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_10|full_adder:fa200                  ; full_adder  ; work         ;
+;          |full_adder:fa20|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_10|full_adder:fa20                   ; full_adder  ; work         ;
+;          |full_adder:fa3000| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_10|full_adder:fa3000                 ; full_adder  ; work         ;
+;          |full_adder:fa300|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_10|full_adder:fa300                  ; full_adder  ; work         ;
+;          |full_adder:fa30|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_10|full_adder:fa30                   ; full_adder  ; work         ;
+;          |full_adder:fa3|    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_10|full_adder:fa3                    ; full_adder  ; work         ;
+;          |full_adder:fa4000| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_10|full_adder:fa4000                 ; full_adder  ; work         ;
+;          |full_adder:fa500|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_10|full_adder:fa500                  ; full_adder  ; work         ;
+;          |full_adder:fa50|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_10|full_adder:fa50                   ; full_adder  ; work         ;
+;          |full_adder:fa5|    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_10|full_adder:fa5                    ; full_adder  ; work         ;
+;          |full_adder:fa600|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_10|full_adder:fa600                  ; full_adder  ; work         ;
+;          |full_adder:fa60|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_10|full_adder:fa60                   ; full_adder  ; work         ;
+;          |full_adder:fa6|    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_10|full_adder:fa6                    ; full_adder  ; work         ;
+;          |full_adder:fa70|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_10|full_adder:fa70                   ; full_adder  ; work         ;
+;          |full_adder:fa7|    ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_10|full_adder:fa7                    ; full_adder  ; work         ;
+;          |full_adder:fa800|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_10|full_adder:fa800                  ; full_adder  ; work         ;
+;          |full_adder:fa80|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_10|full_adder:fa80                   ; full_adder  ; work         ;
+;          |full_adder:fa8|    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_10|full_adder:fa8                    ; full_adder  ; work         ;
+;          |full_adder:fa900|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_10|full_adder:fa900                  ; full_adder  ; work         ;
+;          |full_adder:fa9|    ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_10|full_adder:fa9                    ; full_adder  ; work         ;
+;       |add32:add_1|          ; 33 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_1                                    ; add32       ; work         ;
+;          |full_adder:fa1000| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_1|full_adder:fa1000                  ; full_adder  ; work         ;
+;          |full_adder:fa100|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_1|full_adder:fa100                   ; full_adder  ; work         ;
+;          |full_adder:fa10|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_1|full_adder:fa10                    ; full_adder  ; work         ;
+;          |full_adder:fa200|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_1|full_adder:fa200                   ; full_adder  ; work         ;
+;          |full_adder:fa20|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_1|full_adder:fa20                    ; full_adder  ; work         ;
+;          |full_adder:fa3000| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_1|full_adder:fa3000                  ; full_adder  ; work         ;
+;          |full_adder:fa300|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_1|full_adder:fa300                   ; full_adder  ; work         ;
+;          |full_adder:fa30|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_1|full_adder:fa30                    ; full_adder  ; work         ;
+;          |full_adder:fa3|    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_1|full_adder:fa3                     ; full_adder  ; work         ;
+;          |full_adder:fa400|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_1|full_adder:fa400                   ; full_adder  ; work         ;
+;          |full_adder:fa40|   ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_1|full_adder:fa40                    ; full_adder  ; work         ;
+;          |full_adder:fa5000| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_1|full_adder:fa5000                  ; full_adder  ; work         ;
+;          |full_adder:fa500|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_1|full_adder:fa500                   ; full_adder  ; work         ;
+;          |full_adder:fa5|    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_1|full_adder:fa5                     ; full_adder  ; work         ;
+;          |full_adder:fa600|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_1|full_adder:fa600                   ; full_adder  ; work         ;
+;          |full_adder:fa60|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_1|full_adder:fa60                    ; full_adder  ; work         ;
+;          |full_adder:fa6|    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_1|full_adder:fa6                     ; full_adder  ; work         ;
+;          |full_adder:fa70|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_1|full_adder:fa70                    ; full_adder  ; work         ;
+;          |full_adder:fa7|    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_1|full_adder:fa7                     ; full_adder  ; work         ;
+;          |full_adder:fa800|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_1|full_adder:fa800                   ; full_adder  ; work         ;
+;          |full_adder:fa80|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_1|full_adder:fa80                    ; full_adder  ; work         ;
+;          |full_adder:fa8|    ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_1|full_adder:fa8                     ; full_adder  ; work         ;
+;          |full_adder:fa90|   ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_1|full_adder:fa90                    ; full_adder  ; work         ;
+;          |full_adder:fa9|    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|sub32:sub0|add32:add_1|full_adder:fa9                     ; full_adder  ; work         ;
+;    |xor32:xor0|              ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu32|xor32:xor0                                                ; xor32       ; work         ;
++------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------+
+; State Machine - |alu32|mult32:mult0|control:control0|currentState                                         ;
++-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+
+; Name            ; currentState.S3 ; currentState.S2 ; currentState.S1 ; currentState.S0 ; currentState.S4 ;
++-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+
+; currentState.S0 ; 0               ; 0               ; 0               ; 0               ; 0               ;
+; currentState.S1 ; 0               ; 0               ; 1               ; 1               ; 0               ;
+; currentState.S2 ; 0               ; 1               ; 0               ; 1               ; 0               ;
+; currentState.S3 ; 1               ; 0               ; 0               ; 1               ; 0               ;
+; currentState.S4 ; 0               ; 0               ; 0               ; 1               ; 1               ;
++-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+
+
+
++----------------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops                         ;
++-----------------------------------------------------------------+----+
+; Logic Cell Name                                                 ;    ;
++-----------------------------------------------------------------+----+
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m0|or0~0  ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m1|or0~0  ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m2|or0~0  ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m3|or0~0  ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m4|or0~0  ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m5|or0~0  ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m6|or0~0  ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m7|or0~0  ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m8|or0~0  ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m9|or0~0  ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m10|or0~0 ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m11|or0~0 ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m12|or0~0 ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m13|or0~0 ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m14|or0~0 ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m15|or0~0 ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m16|or0~0 ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m17|or0~0 ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m18|or0~0 ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m19|or0~0 ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m20|or0~0 ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m21|or0~0 ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m22|or0~0 ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m23|or0~0 ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m24|or0~0 ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m25|or0~0 ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m26|or0~0 ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m27|or0~0 ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m28|or0~0 ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m29|or0~0 ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m30|or0~0 ;    ;
+; mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m31|or0~0 ;    ;
+; Number of logic cells representing combinational loops          ; 32 ;
++-----------------------------------------------------------------+----+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------------+
+; Registers Removed During Synthesis                                ;
++----------------------------------------------+--------------------+
+; Register name                                ; Reason for Removal ;
++----------------------------------------------+--------------------+
+; mult32:mult0|control:control0|write          ; Lost fanout        ;
+; mult32:mult0|control:control0|currentState~2 ; Lost fanout        ;
+; mult32:mult0|control:control0|currentState~3 ; Lost fanout        ;
+; Total Number of Removed Registers = 3        ;                    ;
++----------------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 13    ;
+; Number of registers using Synchronous Clear  ; 2     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 8     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |alu32|mult32:mult0|datapath:datapath0|mux2x1_32:mm00|mux2x1:m2|or0 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "slt32:slt0|sub32:sub_1"                                                                                                                                                             ;
++-------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                                                                                            ;
++-------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; cin   ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; out   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                           ;
+; ccout ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                           ;
++-------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mult32:mult0|datapath:datapath0|adder:add0|full_adder:fa5000"                       ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mult32:mult0|datapath:datapath0|adder:add0|full_adder:fa1"                                                                                                                           ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; cin     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; cin[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mult32:mult0|datapath:datapath0|adder:add0"                                                                                                                                           ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                                                            ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; cin     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; cin[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; cout    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------+
+; Port Connectivity Checks: "mult32:mult0|datapath:datapath0|mux2x1_32:mm01" ;
++------------+-------+----------+--------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                    ;
++------------+-------+----------+--------------------------------------------+
+; multiplier ; Input ; Info     ; Stuck at GND                               ;
++------------+-------+----------+--------------------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Port Connectivity Checks: "mult32:mult0|datapath:datapath0|mux3x2_64:mm0" ;
++-------+-------+----------+------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                        ;
++-------+-------+----------+------------------------------------------------+
+; c[63] ; Input ; Info     ; Stuck at GND                                   ;
++-------+-------+----------+------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mult32:mult0|datapath:datapath0"                                                               ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; product[63..32] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mult32:mult0|control:control0"                                                                                            ;
++-------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                                  ;
++-------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+; state ; Output ; Warning  ; Output or bidir port (3 bits) is wider than the port expression (1 bits) it drives; bit(s) "state[2..1]" have no fanouts ;
+; state ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                      ;
++-------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "mult32:mult0|or32:or0" ;
++------+-------+----------+-------------------------+
+; Port ; Type  ; Severity ; Details                 ;
++------+-------+----------+-------------------------+
+; a    ; Input ; Info     ; Stuck at GND            ;
++------+-------+----------+-------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sub32:sub0|add32:add_1"                                                                                                                                                 ;
++------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                                 ;
++------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; cout ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (32 bits) it drives.  The 31 most-significant bit(s) in the port expression will be connected to GND. ;
++------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sub32:sub0|add32:add_10"                                                                                                                                                               ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                            ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; b[31..1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; b[0]     ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; cin      ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; cin[-1]  ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; cout     ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (32 bits) it drives.  The 31 most-significant bit(s) in the port expression will be connected to GND.            ;
+; cout[-1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sub32:sub0"                                                                                                                                                                          ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; cin     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; cin[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "add32:add0|full_adder:fa5000"                                                       ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "add32:add0|full_adder:fa1"                                                                                                                                                           ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; cin     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; cin[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "add32:add0"                                                                                                                                                                           ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                                                            ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; cin     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; cin[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; cout    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 13                          ;
+;     ENA               ; 8                           ;
+;     SCLR              ; 2                           ;
+;     plain             ; 3                           ;
+; arriav_lcell_comb     ; 231                         ;
+;     arith             ; 6                           ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 1                           ;
+;     extend            ; 25                          ;
+;         7 data inputs ; 25                          ;
+;     normal            ; 200                         ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 32                          ;
+;         3 data inputs ; 43                          ;
+;         4 data inputs ; 20                          ;
+;         5 data inputs ; 42                          ;
+;         6 data inputs ; 62                          ;
+; boundary_port         ; 101                         ;
+;                       ;                             ;
+; Max LUT depth         ; 14.00                       ;
+; Average LUT depth     ; 7.52                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+    Info: Processing started: Thu Dec  8 22:33:49 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off alu32 -c alu32
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file mux3x2_64.v
+    Info (12023): Found entity 1: mux3x2_64 File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/mux3x2_64.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux3x2_32.v
+    Info (12023): Found entity 1: mux3x2_32 File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/mux3x2_32.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux2x1_32.v
+    Info (12023): Found entity 1: mux2x1_32 File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/mux2x1_32.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux2x1.v
+    Info (12023): Found entity 1: mux2x1 File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/mux2x1.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mult32.v
+    Info (12023): Found entity 1: mult32 File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/mult32.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file datapath.v
+    Info (12023): Found entity 1: datapath File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/datapath.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file control.v
+    Info (12023): Found entity 1: control File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/control.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file adder.v
+    Info (12023): Found entity 1: adder File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/adder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux3x8.v
+    Info (12023): Found entity 1: mux3x8 File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/mux3x8.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file alu32.v
+    Info (12023): Found entity 1: alu32 File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/alu32.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file add32.v
+    Info (12023): Found entity 1: add32 File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/add32.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file full_adder.v
+    Info (12023): Found entity 1: full_adder File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/full_adder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sub32.v
+    Info (12023): Found entity 1: sub32 File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file xor32.v
+    Info (12023): Found entity 1: xor32 File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/xor32.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file and32.v
+    Info (12023): Found entity 1: and32 File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/and32.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file or32.v
+    Info (12023): Found entity 1: or32 File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/or32.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file nor32.v
+    Info (12023): Found entity 1: nor32 File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/nor32.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file slt32.v
+    Info (12023): Found entity 1: slt32 File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/slt32.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at mult32.v(12): created implicit net for "write1" File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/mult32.v Line: 12
+Warning (10236): Verilog HDL Implicit Net warning at mult32.v(13): created implicit net for "shift1" File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/mult32.v Line: 13
+Warning (10236): Verilog HDL Implicit Net warning at mult32.v(14): created implicit net for "product01" File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/mult32.v Line: 14
+Warning (10236): Verilog HDL Implicit Net warning at mult32.v(20): created implicit net for "state" File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/mult32.v Line: 20
+Info (12127): Elaborating entity "alu32" for the top level hierarchy
+Info (12128): Elaborating entity "add32" for hierarchy "add32:add0" File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/alu32.v Line: 20
+Warning (10034): Output port "cout" at add32.v(6) has no driver File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/add32.v Line: 6
+Info (12128): Elaborating entity "full_adder" for hierarchy "add32:add0|full_adder:fa1" File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/add32.v Line: 10
+Info (12128): Elaborating entity "sub32" for hierarchy "sub32:sub0" File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/alu32.v Line: 21
+Warning (10034): Output port "ccout" at sub32.v(6) has no driver File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 6
+Info (12128): Elaborating entity "mult32" for hierarchy "mult32:mult0" File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/alu32.v Line: 22
+Warning (10036): Verilog HDL or VHDL warning at mult32.v(12): object "write1" assigned a value but never read File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/mult32.v Line: 12
+Warning (10036): Verilog HDL or VHDL warning at mult32.v(13): object "shift1" assigned a value but never read File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/mult32.v Line: 13
+Warning (10036): Verilog HDL or VHDL warning at mult32.v(14): object "product01" assigned a value but never read File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/mult32.v Line: 14
+Info (12128): Elaborating entity "or32" for hierarchy "mult32:mult0|or32:or0" File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/mult32.v Line: 18
+Info (12128): Elaborating entity "control" for hierarchy "mult32:mult0|control:control0" File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/mult32.v Line: 20
+Warning (10230): Verilog HDL assignment warning at control.v(50): truncated value with size 32 to match size of target (7) File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/control.v Line: 50
+Info (10264): Verilog HDL Case Statement information at control.v(28): all case item expressions in this case statement are onehot File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/control.v Line: 28
+Info (10264): Verilog HDL Case Statement information at control.v(61): all case item expressions in this case statement are onehot File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/control.v Line: 61
+Info (12128): Elaborating entity "datapath" for hierarchy "mult32:mult0|datapath:datapath0" File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/mult32.v Line: 21
+Warning (10739): Verilog HDL warning at datapath.v(15): actual bit length 32 differs from formal bit length 1 File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/datapath.v Line: 15
+Info (12128): Elaborating entity "mux3x2_64" for hierarchy "mult32:mult0|datapath:datapath0|mux3x2_64:mm0" File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/datapath.v Line: 17
+Info (12128): Elaborating entity "mux2x1_32" for hierarchy "mult32:mult0|datapath:datapath0|mux3x2_64:mm0|mux2x1_32:m0" File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/mux3x2_64.v Line: 12
+Info (12128): Elaborating entity "mux2x1" for hierarchy "mult32:mult0|datapath:datapath0|mux3x2_64:mm0|mux2x1_32:m0|mux2x1:m0" File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/mux2x1_32.v Line: 7
+Info (12128): Elaborating entity "adder" for hierarchy "mult32:mult0|datapath:datapath0|adder:add0" File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/datapath.v Line: 22
+Warning (10034): Output port "cout" at adder.v(6) has no driver File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/adder.v Line: 6
+Info (12128): Elaborating entity "xor32" for hierarchy "xor32:xor0" File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/alu32.v Line: 23
+Info (12128): Elaborating entity "and32" for hierarchy "and32:and00" File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/alu32.v Line: 24
+Info (12128): Elaborating entity "slt32" for hierarchy "slt32:slt0" File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/alu32.v Line: 26
+Warning (10739): Verilog HDL warning at slt32.v(11): actual bit length 32 differs from formal bit length 1 File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/slt32.v Line: 11
+Warning (10034): Output port "out[31..1]" at slt32.v(4) has no driver File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/slt32.v Line: 4
+Info (12128): Elaborating entity "nor32" for hierarchy "nor32:nor0" File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/alu32.v Line: 27
+Info (12128): Elaborating entity "mux3x8" for hierarchy "mux3x8:mux_0" File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/alu32.v Line: 29
+Warning (12020): Port "ordered port 2" on the entity instantiation of "fa1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/add32.v Line: 10
+Warning (12030): Port "ordered port 4" on the entity instantiation of "add_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be left dangling without any fan-out logic. File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 47
+Warning (12020): Port "ordered port 2" on the entity instantiation of "fa1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/add32.v Line: 10
+Warning (12020): Port "ordered port 2" on the entity instantiation of "add_10" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 46
+Warning (12030): Port "ordered port 4" on the entity instantiation of "add_10" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be left dangling without any fan-out logic. File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 46
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[31]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[30]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[29]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[28]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[27]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[26]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[25]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[24]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[23]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[22]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[21]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[20]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[19]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[18]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[17]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[16]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[15]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[14]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[13]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[12]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[11]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[10]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[9]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[8]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[7]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[6]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[5]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[4]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[3]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[2]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[1]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[31]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[30]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[29]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[28]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[27]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[26]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[25]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[24]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[23]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[22]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[21]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[20]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[19]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[18]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[17]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[16]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[15]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[14]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[13]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[12]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[11]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[10]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[9]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[8]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[7]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[6]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[5]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[4]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[3]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[2]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "slt32:slt0|sub32:sub_1|cout[1]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+Warning (12020): Port "ordered port 2" on the entity instantiation of "fa1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/add32.v Line: 10
+Warning (12020): Port "ordered port 2" on the entity instantiation of "fa1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/add32.v Line: 10
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "sub32:sub0|cout[31]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "sub32:sub0|cout[30]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "sub32:sub0|cout[29]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "sub32:sub0|cout[28]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "sub32:sub0|cout[27]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "sub32:sub0|cout[26]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "sub32:sub0|cout[25]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "sub32:sub0|cout[24]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "sub32:sub0|cout[23]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "sub32:sub0|cout[22]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "sub32:sub0|cout[21]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "sub32:sub0|cout[20]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "sub32:sub0|cout[19]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "sub32:sub0|cout[18]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "sub32:sub0|cout[17]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "sub32:sub0|cout[16]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "sub32:sub0|cout[15]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "sub32:sub0|cout[14]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "sub32:sub0|cout[13]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "sub32:sub0|cout[12]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "sub32:sub0|cout[11]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "sub32:sub0|cout[10]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "sub32:sub0|cout[9]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "sub32:sub0|cout[8]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "sub32:sub0|cout[7]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "sub32:sub0|cout[6]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "sub32:sub0|cout[5]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "sub32:sub0|cout[4]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "sub32:sub0|cout[3]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "sub32:sub0|cout[2]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+    Warning (12110): Net "sub32:sub0|cout[1]" is missing source, defaulting to GND File: /home/eren/OneDrive_e.cakar2019@gtu.edu.tr/CSE Homeworks/cse331/hw2/second_part/sub32.v Line: 10
+Warning (12241): 9 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 332 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 69 input pins
+    Info (21059): Implemented 32 output pins
+    Info (21061): Implemented 231 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 119 warnings
+    Info: Peak virtual memory: 496 megabytes
+    Info: Processing ended: Thu Dec  8 22:34:06 2022
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:23
+
+

@@ -1,0 +1,8 @@
+
+State Machine - |mult32|control:control0|currentState
+Name currentState.S3 currentState.S2 currentState.S1 currentState.S0 currentState.S4 
+currentState.S0 0 0 0 0 0 
+currentState.S1 0 0 1 1 0 
+currentState.S2 0 1 0 1 0 
+currentState.S3 1 0 0 1 0 
+currentState.S4 0 0 0 1 1 

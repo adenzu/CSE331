@@ -1,0 +1,9 @@
+module alu32 (a, b, aluop, result);
+input [31:0] a;
+input [31:0] b;
+input [2:0] aluop;
+output [31:0] result;
+
+
+
+endmodule

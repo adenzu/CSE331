@@ -1,0 +1,41 @@
+module mux2x1_32 (product, multiplier, reset, product1);
+input [31:0] product;
+input [31:0] multiplier;
+input reset;
+input [31:0] product1;
+
+
+mux2x1 m0(product[0], multiplier[0], reset, product1[0]);
+mux2x1 m1(product[1], multiplier[1], reset, product1[1]);
+mux2x1 m2(product[2], multiplier[2], reset, product1[2]);
+mux2x1 m3(product[3], multiplier[3], reset, product1[3]);
+mux2x1 m4(product[4], multiplier[4], reset, product1[4]);
+mux2x1 m5(product[5], multiplier[5], reset, product1[5]);
+mux2x1 m6(product[6], multiplier[6], reset, product1[6]);
+mux2x1 m7(product[7], multiplier[7], reset, product1[7]);
+mux2x1 m8(product[8], multiplier[8], reset, product1[8]);
+mux2x1 m9(product[9], multiplier[9], reset, product1[9]);
+mux2x1 m10(product[10], multiplier[10], reset, product1[10]);
+mux2x1 m11(product[11], multiplier[11], reset, product1[11]);
+mux2x1 m12(product[12], multiplier[12], reset, product1[12]);
+mux2x1 m13(product[13], multiplier[13], reset, product1[13]);
+mux2x1 m14(product[14], multiplier[14], reset, product1[14]);
+mux2x1 m15(product[15], multiplier[15], reset, product1[15]);
+mux2x1 m16(product[16], multiplier[16], reset, product1[16]);
+mux2x1 m17(product[17], multiplier[17], reset, product1[17]);
+mux2x1 m18(product[18], multiplier[18], reset, product1[18]);
+mux2x1 m19(product[19], multiplier[19], reset, product1[19]);
+mux2x1 m20(product[20], multiplier[20], reset, product1[20]);
+mux2x1 m21(product[21], multiplier[21], reset, product1[21]);
+mux2x1 m22(product[22], multiplier[22], reset, product1[22]);
+mux2x1 m23(product[23], multiplier[23], reset, product1[23]);
+mux2x1 m24(product[24], multiplier[24], reset, product1[24]);
+mux2x1 m25(product[25], multiplier[25], reset, product1[25]);
+mux2x1 m26(product[26], multiplier[26], reset, product1[26]);
+mux2x1 m27(product[27], multiplier[27], reset, product1[27]);
+mux2x1 m28(product[28], multiplier[28], reset, product1[28]);
+mux2x1 m29(product[29], multiplier[29], reset, product1[29]);
+mux2x1 m30(product[30], multiplier[30], reset, product1[30]);
+mux2x1 m31(product[31], multiplier[31], reset, product1[31]);
+
+endmodule
