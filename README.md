@@ -1,15 +1,15 @@
 # CSE331
-Assignments of GTU Computer Organizaiton of 2022 Fall 
+Assignments of GTU Computer Organization of 2022 Fall
 
-hw1 86  
-hw2 53  
-bonus 83  
-project 73  
+| Task          | Score |
+|---------------|-------|
+| HW1           | 86    |
+| HW2           | 53    |
+| Bonus         | 83    |
+| Project       | 73    |
+| Quiz1         | 93    |
+| Quiz2         | 100   |
+| Midterm       | 56    |
+| Final         | 89    |
 
-quiz1 93  
-quiz2 100  
-
-midterm 56  
-final 89  
-
-letter grade AA  
+**Letter Grade:** AA
